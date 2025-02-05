@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ Алиса Виктор ❤️</title>
+    <link rel="icon" type="image/x-icon" href="assets/heart.png">
+</head>
+<body>
+
+        <div class="completion-message" id="completionMessage">🎉 Поздравления Красавицо! Всичките въпроси са ти вярни Обичам те много! 🎉</div>
+        <div class="imperfect-message" id="imperfectMessage">💔 Има малко грешки бебе, но знам ,че ще се справиш, Опитай пак! 💔</div>
+        <audio id="victorySound" src="music/victory.mp3"></audio>    
+
+        
+    <div class="container">
+        <div class="score-board" id="scoreDisplay">Score: 0/0</div>
+        <h1>Виктор & Алиса Въпроси ❤️</h1>
+        <div class="heart">♥</div>
+
+        <!-- Questions (same structure as before) -->
+        <div class="question-box">
+            <div class="question">Какво най-много обича Виктор да прави в свободното си време?</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Да спи</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">Да играе игри</div>
+            <div class="option" onclick="handleAnswer(this, 'incorrect')">Да яде</div>
+    
+        </div>
+
+        <div class="question-box">
+            <div class="question">Коя е играта която Виктор играе най-много в момента?</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">RUST</div>
+            <div class="option" onclick="handleAnswer(this, 'incorrect')">World Of Warcraft</div>
+            <div class="option" onclick="handleAnswer(this, 'incorrect')">Marvel Rivals</div>
+        
+        </div>
+
+        <div class="question-box">
+            <div class="question">Какво много най-често ти подарява Виктор?</div>
+            <div class="option" onclick="handleAnswer(this, 'incorrect')">Цветя</div>
+            <div class="option" onclick="handleAnswer(this, 'incorrect')">Сладко</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">Плюшени играчки</div>
+        </div>
+
+        <div class="question-box">
+            <div class="question">Какво най много Виктор обича да слуша?</div>
+            <div class="option" onclick="handleAnswer(this, 'incorrect')">Поп</div>
+            <div class="option" onclick="handleAnswer(this, 'incorrect')">Американски рап</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">Чалга</div>
+        </div>
+
+        <div class="question-box">
+            <div class="question">Какво го дразни Виктор най-много? </div>
+            <div class="option" onclick="handleAnswer(this, 'incorrect')">Алиса</div>
+            <div class="option" onclick="handleAnswer(this, 'incorrect')">Скучаенето</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">Мангалите на работа</div>
+        </div>
+        
+        <div class="question-box">
+            <div class="question">Кой е любимият сериал на Виктор</div>
+            <div class="option" onclick="handleAnswer(this, 'incorrect')">Братя</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">Под Прекритие</div>
+            <div class="option" onclick="handleAnswer(this, 'incorrect')">Наркос</div>
+        </div>
+
+        <div class="question-box">
+            <div class="question">Какъв език Виктор знае най-много след родния му език?</div>
+            <div class="option" onclick="handleAnswer(this, 'incorrect')">Руски</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">Английски</div>
+            <div class="option" onclick="handleAnswer(this, 'incorrect')">Немски</div>
+        </div>
+
+        
+        <div class="question-box">
+            <div class="question">Какъв Виктор иска да стане в бъдеще?</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">Бизнесмен</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Преподавател</div>
+            <div class="option" onclick="handleAnswer(this, 'incorrect')">Космонавт</div>
+        </div>
+
+        <div class="question-box">
+            <div class="question">Кой писа пръв при запознанството на Виктор и Алиса?</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">Алиса</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Виктор</div>
+    
+        </div>
+
+        <div class="question-box">
+            <div class="question">Каква беше първата дума с който Виктор Закачаше Алиса?</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Сладур</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Кукла</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">Пате</div>
+    
+        </div>
+
+        <div class="question-box">
+            <div class="question">Какво беше първото изречение като Виктор закачи Алиса?</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Много си сладка, ще те взема за жена</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">Наще ми казват да си следя мечтите, но не ми казаха да спра вече като намерих теб</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Аз съм пожарникарят от гореща те правя мокра</div>
+    
+        </div>
+
+        <div class="question-box">
+            <div class="question">С каква роза беше дошъл Виктор като се видяхте за първи път?</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">Бяла</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Червена</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Розова</div>
+    
+        </div>
+
+        <div class="question-box">
+            <div class="question">Кой посегна към първа целувка пръв от двамата?</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">Виктор</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Алиса</div>
+    
+        </div>
+
+        <div class="question-box">
+            <div class="question">Кой ми е любимият сезон?</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Зима</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">Лято</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Есен</div>
+    
+        </div>
+
+        <div class="question-box">
+            <div class="question">Алиса ще бъдеш ли моя валентинка?</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">Разбира се че да!</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Не махай се!</div>
+    
+        </div>
+
+        <div class="question-box">
+            <div class="question">Къде ще е първата дестинация като отиват на почивка след като Алиса направи 18?</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">Турция</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Гърция</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Дубай</div>
+    
+        </div>
+
+        <div class="question-box">
+            <div class="question">Февруари месец колко време ще стане от връзката на Виктор и Алиса?</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">1 Година и 5 Месеца</div>
+            <div class="option" data-correct="true" onclick="handleAnswer(this, 'correct')">1 Година и 6 месеца</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">1 година и 7 месеца</div>
+    
+        </div>
+
+        <div class="question-box">
+            <div class="question">Как се казва кучето на Виктор</div>
+            <div class="option"  data-correct="true"onclick="handleAnswer(this, 'correct')">Кольо</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Иван</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Петьо</div>
+    
+        </div>
+
+        
+        <div class="question-box">
+            <div class="question">От колко време Виктор има книжка?</div>
+            <div class="option"   data-correct="true"  onclick="handleAnswer(this, 'correct')">2 години</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">3 години</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">1 година</div>
+    
+        </div>
+
+        <div class="question-box">
+            <div class="question">Какво като  малък е играл Виктор много?</div>
+            <div class="option"    onclick="handleAnswer(this, 'incorrect')">Баскетбол</div>
+            <div class="option"  data-correct="true" onclick="handleAnswer(this, 'correct')">Футбол</div>
+            <div class="option"  onclick="handleAnswer(this, 'incorrect')">Волейбол</div>
+    
+        </div>
+
+
+        <!-- Add more questions here -->
+    </div>
+
+    <script src="script/main.js"></script>
+</body>
+</html>
